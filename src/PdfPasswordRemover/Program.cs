@@ -1,4 +1,5 @@
 ﻿using iText.Kernel.Pdf;
+using System.Reflection;
 using System.Text;
 
 namespace PdfPasswordRemover;
@@ -7,6 +8,8 @@ public static class Program
 {
     public static void Main(string[] args)
     {
+        Console.WriteLine($"PDF Password Clean - {Assembly.GetAssembly(typeof(Program)).GetName().Version}");
+
         if (args != null && args.Length == 1)
         {
             RemovePasswordFromPdf(args[0]);
